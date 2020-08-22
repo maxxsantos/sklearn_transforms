@@ -15,7 +15,7 @@ class DropColumns(BaseEstimator, TransformerMixin):
         # Retornamos um novo dataframe sem as colunas indesejadas
         return data.drop(labels=self.columns, axis='columns')
 
-class Balance(SSMOTEEN):
+class Balance(SMOTEENN):
     def __init__(self, sampling_strategy='auto', random_state=None, smote=None, enn=None, n_jobs=1, ratio=None):
         self = self
     def fit_resample(self, X, y):
