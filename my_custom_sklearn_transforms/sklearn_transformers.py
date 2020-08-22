@@ -1,5 +1,5 @@
 from sklearn.base import BaseEstimator, TransformerMixin
-
+from imblearn.combine import SMOTEENN 
 
 # All sklearn Transforms must have the `transform` and `fit` methods
 class DropColumns(BaseEstimator, TransformerMixin):
@@ -14,3 +14,10 @@ class DropColumns(BaseEstimator, TransformerMixin):
         data = X.copy()
         # Retornamos um novo dataframe sem as colunas indesejadas
         return data.drop(labels=self.columns, axis='columns')
+
+class Balance(SSMOTEEN):
+    def __init__(self, sampling_strategy='auto', random_state=None, smote=None, enn=None, n_jobs=1, ratio=None):
+        self = self
+    def fit_resample(self, X, y):
+        smote_enn = SMOTEEN(random_state=0)
+        return smote_enn.fit_resample(X, y)
