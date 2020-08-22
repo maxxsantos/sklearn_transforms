@@ -18,6 +18,7 @@ class DropColumns(BaseEstimator, TransformerMixin):
 class Balance(SMOTEENN):
     def __init__(self, sampling_strategy='auto', random_state=None, smote=None, enn=None, n_jobs=1, ratio=None):
         self = self
-    def fit_resample(self, X, y):
+    def fit(self, X, y):
         smote_enn = SMOTEENN(random_state=0)
+    def transform(self, X, y):
         return smote_enn.fit_resample(X, y)
