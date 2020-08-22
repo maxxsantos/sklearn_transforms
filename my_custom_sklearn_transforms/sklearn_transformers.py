@@ -21,4 +21,5 @@ class Balance(SMOTEENN):
     def fit(self, X, y):
         smote_enn = SMOTEENN(random_state=0)
     def transform(self, X, y):
-        return smote_enn.fit_resample(X, y)
+        X_resampled, y_resampled = smoten.fit_resample(X, y)
+        return X_resampled
